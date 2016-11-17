@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>Задание1 (11.11.2016) Калькулятор</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+
+ <script type="text/javascript">
+ 		var num1 = prompt("Введите первое числовое значение"); 
+ 		var option	= prompt("Введите знак операции: +,-,*,/ или %");
+  		var num2 = prompt("Введите второе числовое значение"); 
+  
+  		var mult = function (num1, num2) {
+            return num1 * num2;
+        };
+
+        var division = function (num1, num2) {
+            return num1 / num2;
+        };
+ 		var add = function (num1, num2) {
+            return Number(num1) + Number(num2);
+        };
+         var sub = function (num1, num2) {
+            return num1 - num2;
+        };
+         var per = function (num1, num2) {
+            return num1/num2*100;
+        };
+
+        function show(callBackFunction, num1, num2) {
+
+            var result = callBackFunction(num1, num2);
+            alert("Result: " + num1 + "" + option + "" + num2 + "=" + result);
+
+        };
+		
+		switch (option){
+		case "+":
+			show(add, num1, num2);
+		break;
+
+		case "-":
+			show(sub, num1, num2);
+		break;
+		case "*":
+			show(mult, num1, num2);
+		break;
+
+		case "/":
+			 show(division, num1, num2);
+		break;
+			
+		case "%":
+			show(per, num1, num2);
+		break;
+		}
+	</script>
+		
+</body>
+</html>
