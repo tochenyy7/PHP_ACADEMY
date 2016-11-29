@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Переворачивание массива</title>
+</head>
+<body>
+<script>
+	var v = [1,2,3,4,5];                  
+	document.write ('<p>' + v);
+	for (var k, j = 0, J = v.length, L = parseInt (J / 2); j < L; j++)
+   	k = v [j],
+       v [j] = v [J - 1 - j],
+       v [J - 1 - j] = k;    
+   document.write ('<p>' + v);
+</script>
+</body>
+</html>
