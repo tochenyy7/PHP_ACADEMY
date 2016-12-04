@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>Задание (30.11.2016) Полиморфизм </title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+ 
+    <script>
+      
+    
+         //Конструктор родительского класса
+      function Figure(w, h){
+          this.width = w; //одна из сторон квадрата, прямоугольника; основание треугольника, радиус круга
+          this.height = h; // вторая сторона прямоугольника; высота опущення к основанию треугольника
+      }
+
+        
+      Figure.prototype.Rectangle = function(){
+          return this.width * this.height;
+      }
+
+      Figure.prototype.Quadrate = function(){
+          return Math.pow(this.width, 2);
+      }
+
+      Figure.prototype.Circle = function(){
+          return Math.PI*Math.pow(this.width, 2);
+      }
+
+      Figure.prototype.Triangle = function(){
+          return 0.5 * this.width * this.height;
+      }
+
+
+       // Создаем экземпляр родителя
+      var fig1 = new Figure(100, 200);  
+      var fig2 = new Figure(6); 
+      var fig3 = new Figure(12, 16);                    
+       
+
+      document.write('Площадь прямоугольника равна:' + fig1.Rectangle() + "<br />");
+      document.write('Площадь квадрата равна:' + fig1.Quadrate() + "<br />");
+      document.write('Площадь первого круга равна:' + fig1.Circle() + "<br />");
+      document.write('Площадь второго круга равна:' + fig2.Circle() + "<br />");
+      document.write('Площадь произвольного треугольника равна:' + fig3.Triangle() + "<br />");
+    </script>
+</body>
+    
+ </html>
