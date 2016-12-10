@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>Задание (02.12.2016) Форма для заполнения полей</title>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <script type="text/javascript" src="file.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+   <script src="maskedinput.js"></script> 
+</head>
+ <body>
+    <form name="myform" method="post" action="reg.htm" onsubmit="return validateForm();">
+      <p id="error1">Email <input id="error2" type="text"  name="email" /></p>
+      <p id="error4">Телефон<input type="text" id="phone" name="lName" placeholder="Введите ваш телефон"></p>
+      <p id="error5">Имя <input id="error6" type="text"  name="fName" /></p>
+      <p id="error7">Возраст<input id="error8" type="text"  name="age" /></p>
+      <p> <input type="submit" name="send" value="Регистрация"/></p>
+    </form>
+    <script type="text/javascript">
+      jQuery(function($){
+      $("#phone").mask("+38(099)999-99-99");
+      });
+    </script>
+  </body>
+</html>
