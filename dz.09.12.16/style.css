@@ -1,0 +1,25 @@
+.rectangle {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 400px;
+  margin-left: -400px;
+  margin-top: 4px;
+  border: 5px solid #69b401;
+  padding: 5px;
+}
+
+.square{
+  cursor: move;
+	position: absolute;
+  right: 45%;
+  top: 40%;
+  width: 80px;
+  height: 80px;
+  background: #8b008b;
+}
+
+.error {
+      border-color: red;
+    }

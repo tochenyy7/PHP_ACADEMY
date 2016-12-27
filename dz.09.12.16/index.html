@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Движение квадрата по экрану</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+   
+</head>
+<body>
+    <div class="rectangle" id="rectangle">
+        <div class="square" id="square"></div>
+    </div>
+<script type='text/javascript'>
+  var rectangle = document.getElementById("rectangle");
+  var square = document.getElementById("square");
+  deltaX = 0;
+  deltaY = 0;
+  
+  square.onmousedown = saveXY;
+  square.addEventListener("onmousedown", saveXY, false);
+
+  document.onmouseup = clearXY;
+
+  function saveXY(objEvent) {
+ 
+    if (objEvent) {
+      x = objEvent.pageX;
+      y = objEvent.pageY;
+    }
+    else {
+      x = window.event.clientX;
+      y = window.event.clientY;
+    }
+
+    xSquare = square.offsetLeft;
+    ySquare = square.offsetTop;
+    //Узнаём смещение
+    deltaX = xSquare - x;
+    deltaY = ySquare - y;
+    
+    document.onmousemove = moveSquare;
+  }
+  function clearXY() {
+    document.onmousemove = null; 
+  function moveSquare(objEvent) {
+   
+    if (objEvent) {
+      x = objEvent.pageX;
+      y = objEvent.pageY;
+    }
+    else {
+      x = window.event.clientX;
+      y = window.event.clientY;
+    }
+ 
+    newX = deltaX + x;
+    newY = deltaY + y;
+    square.style.top = newY + "px";
+    square.style.left = newX + "px";
+if (xSquare <= 0 || ySquare <= 0 || (xSquare + 80) >= 800 || (ySquare + 80) >= 400)
+
+    {
+    rectangle.classList.add("error");
+    clickRed();
+    }
+    else {
+    rectangle.classList.remove("error");
+    }
+    function clickRed() {
+        if (xSquare <= 0) square.style.left = "0px";
+        if (ySquare <= 0) square.style.top = "0px";
+        if ((xSquare + 80) >= 800) square.style.left = "730px"; //учитываем двойную толщину бордера 800-80+10
+        if ((ySquare + 80) >= 400) square.style.top = "330px"; //учитываем двойную толщину бордера
+        }                    
+    }
+  
+</script>
+</body>
+</html>
