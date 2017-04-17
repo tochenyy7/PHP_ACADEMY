@@ -10,7 +10,6 @@
     $scope.addItem = function () {
 		$scope.items.push({ text: $scope.todo, date: $scope.setDate, done: false });
         $scope.todo = '';
-        $scope.setDate = new Date ();
     };
  
 
